@@ -7,10 +7,7 @@ services:
     command:
       - --config.file=/etc/prometheus/prometheus.yml
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
-      - ./rule.yml:/etc/prometheus/rule.yml
-        #links:
-        #- alertmanager:alertmanager
+      - ./prometheus/:/etc/prometheus/
   node_exporter:
     image: quay.io/prometheus/node-exporter:latest
     command:
@@ -33,7 +30,7 @@ services:
   prometheus-bot:
     image: aminvakil/prometheus_bot
     volumes:
-      - "./tgbot/config.yaml:/config.yaml"
+      - ./tgbot/config.yaml:/config.yaml
     ports:
       - 9087:9087
         #command:
