@@ -5,9 +5,10 @@ scrape_configs:
   scrape_interval: 5s
   static_configs:
   - targets:
-    - 63.176.155.137:9100
+    - first_host_ip:9100
+    - second_host_ip:9100
 alerting:
   alertmanagers:
     - static_configs:
         - targets:
-            - 63.176.155.137:9093
+            - alertmanager_ip:9093
