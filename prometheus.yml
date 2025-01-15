@@ -5,9 +5,10 @@ scrape_configs:
   scrape_interval: 5s
   static_configs:
   - targets:
-    - 63.176.155.137:9100
+    - 3.66.189.34:9100
+    - 18.195.117.15:9100
 alerting:
   alertmanagers:
     - static_configs:
         - targets:
-            - 63.176.155.137:9093
+            - 3.66.189.34:9093
